@@ -1,6 +1,5 @@
 package com.mefrreex.jooq.database;
 
-import com.mefrreex.jooq.JOOQ;
 import com.mefrreex.jooq.exception.ConnectionNotEstablishedException;
 import org.jooq.SQLDialect;
 
@@ -21,7 +20,7 @@ public class MySQLDatabase implements IDatabase {
 
     public MySQLDatabase(String host, String database, String user, String password) {
         if (!host.contains(":")) {
-            throw new IllegalArgumentException("Host must be in this format: address:port");
+            throw new IllegalArgumentException("Host must be in format: address:port");
         }
         this.host = host;
         this.database = database;
@@ -38,9 +37,9 @@ public class MySQLDatabase implements IDatabase {
     public CompletableFuture<Connection> getConnection() {
         return CompletableFuture.supplyAsync(() -> {
             try {
-                String password = URLEncoder.encode(this.password, StandardCharsets.UTF_8);
-                String url = "jdbc:mysql://" + user + ":" + password + "@" + host + "/" + database;
                 if (connection == null || connection.isClosed()) {
+                    String password = URLEncoder.encode(this.password, StandardCharsets.UTF_8);
+                    String url = "jdbc:mysql://" + user + ":" + password + "@" + host + "/" + database;
                     connection = DriverManager.getConnection(url, user, password);
                 }
                 return connection;

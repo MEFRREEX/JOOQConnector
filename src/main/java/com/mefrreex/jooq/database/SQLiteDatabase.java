@@ -1,6 +1,5 @@
 package com.mefrreex.jooq.database;
 
-import com.mefrreex.jooq.JOOQ;
 import com.mefrreex.jooq.exception.ConnectionNotEstablishedException;
 import org.jooq.SQLDialect;
 
