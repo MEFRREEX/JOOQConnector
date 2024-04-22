@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("maven-publish")
 }
 
 version = "1.0.1"
@@ -30,4 +31,16 @@ tasks.withType<ProcessResources> {
 
 tasks.withType<Jar> {
     archiveFileName.set("JOOQConnector-PNX-$version.jar")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.mefrreex.jooqconnector"
+                artifactId = "JOOQConnector-PNX"
+                version = "1.0.1"
+            }
+        }
+    }
 }

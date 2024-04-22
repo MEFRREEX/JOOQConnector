@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("maven-publish")
 }
 
 version = "1.0.1"
@@ -19,4 +20,16 @@ dependencies {
 
 tasks.withType<Jar> {
     archiveFileName.set("JOOQConnector-API-$version.jar")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.mefrreex.jooqconnector"
+                artifactId = "JOOQConnector-API"
+                version = "1.0.1"
+            }
+        }
+    }
 }
