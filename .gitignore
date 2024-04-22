@@ -2,6 +2,7 @@
 *.class
 .gradle
 build/
+bin/
 target/
 .idea/
 .vscode/
