@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.mefrreex.jooqconnector"
-version = "2.2.1"
+version = "1.0.0"
 description = "JOOQConnector"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
