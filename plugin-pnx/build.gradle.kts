@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     compileOnly("com.github.PowerNukkitX:PowerNukkitX:master-SNAPSHOT")
+    compileOnly("org.cloudburstmc.netty:netty-transport-raknet:1.0.0.CR1-SNAPSHOT")
     implementation(project(":api"))
 }
 
