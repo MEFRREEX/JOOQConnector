@@ -1,5 +1,5 @@
-name: "${project.name}"
+name: "JOOQConnector"
 version: "${project.version}"
 author: "MEFRREEX"
 api: ["1.0.13"]
-main: com.mefrreex.jooq.JOOQConnector
+main: com.mefrreex.jooq.JOOQConnectorNukkit

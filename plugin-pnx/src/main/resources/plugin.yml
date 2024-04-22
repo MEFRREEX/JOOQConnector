@@ -1,0 +1,5 @@
+name: "JOOQConnector"
+version: "${project.version}"
+author: "MEFRREEX"
+api: ["2.0.0"]
+main: com.mefrreex.jooq.JOOQConnectorPNX
