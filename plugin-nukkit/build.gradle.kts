@@ -3,7 +3,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenLocal()

@@ -2,6 +2,7 @@ package com.mefrreex.jooq.database;
 
 import com.mefrreex.jooq.exception.ConnectionNotEstablishedException;
 import org.jooq.SQLDialect;
+import lombok.Getter;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.CompletableFuture;
 
+@Getter
 public class SQLiteDatabase implements IDatabase {
 
     private final File database;

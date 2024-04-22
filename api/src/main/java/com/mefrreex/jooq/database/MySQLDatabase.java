@@ -1,7 +1,9 @@
 package com.mefrreex.jooq.database;
 
 import com.mefrreex.jooq.exception.ConnectionNotEstablishedException;
+import lombok.AccessLevel;
 import org.jooq.SQLDialect;
+import lombok.Getter;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -10,12 +12,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.CompletableFuture;
 
+@Getter
 public class MySQLDatabase implements IDatabase {
 
     private final String host;
     private final String database;
     private final String user;
     private final String password;
+
     private Connection connection;
 
     public MySQLDatabase(String host, String database, String user, String password) {
