@@ -4,7 +4,7 @@ plugins {
     id("maven-publish")
 }
 
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenLocal()
@@ -38,7 +38,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.mefrreex.jooqconnector"
                 artifactId = "JOOQConnector-Nukkit"
-                version = "1.0.1"
+                version = "1.0.2"
             }
         }
     }
