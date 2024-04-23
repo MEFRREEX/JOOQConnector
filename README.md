@@ -1,7 +1,7 @@
 # JOOQConnector
 
 [![License: GNU GPLv3](https://img.shields.io/badge/License-%20%20GNU%20GPLv3%20-yellow)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0.1-brightgreen)](https://github.com/MEFRREEX/FormConstructor/releases/tag/1.0.1)
+[![Version](https://img.shields.io/badge/Version-1.0.1-brightgreen)](https://github.com/MEFRREEX/JOOQConnector/releases/tag/1.0.1)
 [![Jitpack](https://jitpack.io/v/MEFRREEX/JOOQConnector.svg)](https://jitpack.io/#MEFRREEX/JOOQConnector)
 
 ## 🤔 About
