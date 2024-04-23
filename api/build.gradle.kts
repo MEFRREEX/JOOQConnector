@@ -2,13 +2,6 @@ plugins {
     id("java")
 }
 
-version = "1.0.0"
-
-repositories {
-    mavenLocal()
-    maven("https://repo.maven.apache.org/maven2/")
-}
-
 dependencies {
     implementation("org.jooq:jooq:3.19.7")
     implementation("org.xerial:sqlite-jdbc:3.42.0.0")
@@ -18,5 +11,5 @@ dependencies {
 }
 
 tasks.withType<Jar> {
-    archiveFileName.set("JOOQConnector-API-$version.jar")
+    archiveFileName.set("JOOQConnector-API-${project.version}.jar")
 }
