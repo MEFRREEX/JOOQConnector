@@ -12,6 +12,7 @@ Features:
 - MySQL support
 - Disabled printing logo and tips from JOOQ
 - Inclusion of JOOQ, SQLite and MySQL drivers in jar file
+- Support for different server software (Nukkit, PowerNukkitX, JukeboxMC, WaterdogPE)
 
 ## 🛠 Examples
 
@@ -62,7 +63,7 @@ System.out.println("Value from table: " + value);
 
 Example of using a MySQL database
 ```java
-MySQLDatabase database = new MySQLDatabase("host", "database", "user", "password");
+MySQLDatabase database = new MySQLDatabase("127.0.0.1:3306", "database", "user", "password");
 
 // Other code will be identical...
 ```
@@ -71,7 +72,7 @@ Example of using SQlite or MySQL database
 ```java
 IDatabase database = sqlite ? 
     new SQLiteDatabase(new File("database.db")) : 
-    new MySQLDatabase("host", "database", "user", "password");
+    new MySQLDatabase("127.0.0.1:3306", "database", "user", "password");
 ```
 
 You can make a separate class with methods for the database
