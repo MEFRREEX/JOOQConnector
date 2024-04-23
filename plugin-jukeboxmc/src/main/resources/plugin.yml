@@ -1,0 +1,4 @@
+name: "JOOQConnector"
+version: "${project.version}"
+author: "MEFRREEX"
+main: com.mefrreex.jooq.JOOQConnectorJukeboxMC
