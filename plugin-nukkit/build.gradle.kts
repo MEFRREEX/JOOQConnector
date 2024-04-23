@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 repositories {
@@ -12,10 +13,10 @@ dependencies {
     api(project(":api"))
 }
 
-tasks.build {
-    dependsOn(tasks.shadowJar)
-}
-
 tasks.withType<Jar> {
     archiveFileName.set("JOOQConnector-Nukkit-${project.version}.jar")
+}
+
+tasks.build {
+    dependsOn(tasks.shadowJar)
 }

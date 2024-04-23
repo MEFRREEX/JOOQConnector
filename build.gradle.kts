@@ -19,7 +19,6 @@ allprojects {
 subprojects {
 
     apply {
-        plugin("com.github.johnrengelman.shadow")
         plugin("java-library")
         plugin("maven-publish")
     }
