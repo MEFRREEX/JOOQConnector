@@ -2,6 +2,7 @@ package com.mefrreex.jooq.database;
 
 import com.mefrreex.jooq.exception.ConnectionNotEstablishedException;
 import org.jooq.SQLDialect;
+import lombok.Getter;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -10,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.CompletableFuture;
 
+@Getter
 public class MySQLDatabase implements IDatabase {
 
     private final String host;
