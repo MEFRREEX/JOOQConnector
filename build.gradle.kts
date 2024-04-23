@@ -13,7 +13,7 @@ tasks.build {
 allprojects {
     group = "com.mefrreex.jooqconnector"
     description = "jooqconnector"
-    version = "1.0.0"
+    version = "1.0.1"
 }
 
 subprojects {
@@ -40,6 +40,10 @@ subprojects {
         filesMatching("*.yml") {
             expand(project.properties)
         }
+    }
+
+    fun getArchiveName(): String {
+        return name
     }
 
     publishing {

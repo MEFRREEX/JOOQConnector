@@ -2,6 +2,7 @@ package com.mefrreex.jooq.database;
 
 import com.mefrreex.jooq.exception.ConnectionNotEstablishedException;
 import org.jooq.SQLDialect;
+import lombok.Getter;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,17 +11,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.CompletableFuture;
 
+@Getter
 public class SQLiteDatabase implements IDatabase {
 
-    private final File database;
+    private final File file;
     private Connection connection;
 
-    public SQLiteDatabase(File database) {
-        this.database = database;
-        if (!database.exists()) {
+    public SQLiteDatabase(File file) {
+        this.file = file;
+        if (!file.exists()) {
             try {
-                if (!database.createNewFile()) {
-                    throw new IOException("Failed to create the database file.");
+                if (!file.createNewFile()) {
+                    throw new IOException("Failed to create the database file");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -38,7 +40,7 @@ public class SQLiteDatabase implements IDatabase {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 if (connection == null || connection.isClosed()) {
-                    connection = DriverManager.getConnection("jdbc:sqlite:" + database.getAbsolutePath());
+                    connection = DriverManager.getConnection("jdbc:sqlite:" + file.getAbsolutePath());
                 }
                 return connection;
             } catch (SQLException e) {

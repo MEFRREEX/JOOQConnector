@@ -2,6 +2,7 @@ package com.mefrreex.jooq.database;
 
 import com.mefrreex.jooq.exception.ConnectionNotEstablishedException;
 import org.jooq.SQLDialect;
+import lombok.Getter;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -10,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.CompletableFuture;
 
+@Getter
 public class MySQLDatabase implements IDatabase {
 
     private final String host;
@@ -19,10 +21,7 @@ public class MySQLDatabase implements IDatabase {
     private Connection connection;
 
     public MySQLDatabase(String host, String database, String user, String password) {
-        if (!host.contains(":")) {
-            throw new IllegalArgumentException("Host must be in format: address:port");
-        }
-        this.host = host;
+        this.host = host.contains(":") ? host : host + ":3306";
         this.database = database;
         this.user = user;
         this.password = password;
