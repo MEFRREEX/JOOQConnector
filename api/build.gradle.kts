@@ -13,3 +13,14 @@ dependencies {
 tasks.withType<Jar> {
     archiveFileName.set("JOOQConnector-API-${project.version}.jar")
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.group.toString()
+            artifactId = "jooqconnector-api"
+            version = project.version.toString()
+            from(components["java"])
+        }
+    }
+}
