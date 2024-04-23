@@ -16,7 +16,7 @@ Features:
 
 ## 🛠 Examples
 
-If you are using a standalone api, you can disable the printing of logo and tips when you run the rpogram
+If you are using a standalone api, you can disable the printing of logo and tips when you run the program
 ```java
 JOOQConnector.setJOOQMessagesEnabled(false);
 ```
@@ -51,8 +51,8 @@ String value = database.getConnection().thenApplyAsync(connection -> {
             .where(DSL.field("id").eq(1))
             .fetch();
 
-    // Get the value with index 0
     if (!result.isEmpty()) {
+        // Get the value with index 0
         return result.get(0).get(DSL.field("data", String.class));
     }
     return null;
@@ -112,8 +112,8 @@ public class Database {
                     .where(DSL.field("id").eq(1))
                     .fetch();
 
-            // Get the value with index 0
             if (!result.isEmpty()) {
+                // Get the value with index 0
                 return result.get(0).get(DSL.field("data", String.class));
             }
             return null;
@@ -158,6 +158,7 @@ Dependency:
     <groupId>com.github.MEFRREEX</groupId>
     <artifactId>JOOQConnector</artifactId>
     <version>1.0.1</version>
+    <scope>provided</scope>
 </dependency>
 ```
 
