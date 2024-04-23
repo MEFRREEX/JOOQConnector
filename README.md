@@ -157,7 +157,7 @@ Dependency:
 <dependency>
     <groupId>com.github.MEFRREEX</groupId>
     <artifactId>JOOQConnector</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
@@ -172,6 +172,6 @@ repositories {
 Dependency:
 ```groovy
 dependencies {
-    implementation 'com.github.MEFRREEX:JOOQConnector:1.0.0'
+    implementation 'com.github.MEFRREEX:JOOQConnector:1.0.1'
 }
 ```
