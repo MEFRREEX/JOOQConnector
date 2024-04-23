@@ -21,10 +21,7 @@ public class MySQLDatabase implements IDatabase {
     private Connection connection;
 
     public MySQLDatabase(String host, String database, String user, String password) {
-        if (!host.contains(":")) {
-            throw new IllegalArgumentException("Host must be in format: address:port");
-        }
-        this.host = host;
+        this.host = host.contains(":") ? host : host + ":3306";
         this.database = database;
         this.user = user;
         this.password = password;
