@@ -1,9 +1,17 @@
 # JOOQConnector
-Library for working with database using JOOQ
 
 [![License: GNU GPLv3](https://img.shields.io/badge/License-%20%20GNU%20GPLv3%20-yellow)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen)](https://github.com/MEFRREEX/FormConstructor/releases/tag/2.0.1)
 [![Jitpack](https://jitpack.io/v/MEFRREEX/JOOQConnector.svg)](https://jitpack.io/#MEFRREEX/JOOQConnector)
+
+## 🤔 About
+Library for working with database using JOOQ
+
+Features:
+- SQLite3 support
+- MySQL support
+- Disabled printing logo and tips from JOOQ
+- Inclusion of JOOQ, SQLite and MySQL drivers in jar file
 
 ## 🛠 Examples
 
@@ -127,10 +135,14 @@ public class Database {
 }
 ```
 
-## 🔌 Maven
+## 🔌 Installation
 
-#### Repository
+If you are not using the standalone api version place the plugin of the appropriate version (for your software) in the `plugins` folder.
 
+
+### Maven
+
+Repository:
 ```xml
 <repositories>
     <repository>
@@ -139,12 +151,26 @@ public class Database {
     </repository>
 </repositories>
 ```
-
-#### Dependency
+Dependency:
 ```xml
 <dependency>
     <groupId>com.github.MEFRREEX</groupId>
     <artifactId>JOOQConnector</artifactId>
     <version>1.0.0</version>
 </dependency>
+```
+
+### Gradle
+Repository:
+```groovy
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+```
+Dependency:
+```groovy
+dependencies {
+    implementation 'com.github.MEFRREEX:JOOQConnector:1.0.0'
+}
 ```
