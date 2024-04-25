@@ -42,10 +42,6 @@ subprojects {
         }
     }
 
-    fun getArchiveName(): String {
-        return name
-    }
-
     publishing {
         publications {
             create<MavenPublication>("maven") {
