@@ -12,7 +12,7 @@ Features:
 - MySQL support
 - Disabled printing logo and tips from JOOQ
 - Inclusion of JOOQ, SQLite and MySQL drivers in jar file
-- Support for different server software (Nukkit, PowerNukkitX, JukeboxMC, WaterdogPE)
+- Support for different server software (Bukkit, Nukkit, PowerNukkitX, JukeboxMC, WaterdogPE)
 
 ## 🛠 Examples
 
