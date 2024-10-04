@@ -1,33 +1,33 @@
 # JOOQConnector
-A library for working with databases using JOOQ ORM for Java.
+Библиотека для работы с базами данных с использованием ORM JOOQ для Java.
 
-[![License: GNU GPLv3](https://img.shields.io/badge/License-GNU%20GPLv3-yellow)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0.1-brightgreen)](https://github.com/MEFRREEX/JOOQConnector/releases/tag/1.0.1)
+[![Лицензия: GNU GPLv3](https://img.shields.io/badge/License-GNU%20GPLv3-yellow)](LICENSE)
+[![Версия](https://img.shields.io/badge/Version-1.0.1-brightgreen)](https://github.com/MEFRREEX/JOOQConnector/releases/tag/1.0.1)
 [![Jitpack](https://jitpack.io/v/MEFRREEX/JOOQConnector.svg)](https://jitpack.io/#MEFRREEX/JOOQConnector)
 
-## 📖 Overview
-**JOOQConnector** is a Java library designed for easy interaction with databases using the JOOQ ORM. It includes built-in support for SQLite and MySQL databases and is designed to work with various server software like Bukkit, Nukkit, PowerNukkitX, JukeboxMC, and WaterdogPE.
+## 📖 Обзор
+**JOOQConnector** — это библиотека для Java, предназначенная для удобной работы с базами данных через ORM JOOQ. Она поддерживает SQLite и MySQL, а также рассчитана для работы с различными серверными ядрами, таких как Bukkit, Nukkit, PowerNukkitX, JukeboxMC и WaterdogPE.
 
-### ✨ Features
-- **SQLite3 and MySQL Support**: Seamless integration with SQLite and MySQL databases.
-- **No Unnecessary Logs**: Disable JOOQ logo and tips from appearing in the logs.
-- **Bundled Drivers**: Includes SQLite, and MySQL drivers in the JAR.
-- **Cross-Platform Support**: Compatible with different Minecraft server software.
+### ✨ Возможности
+- **Поддержка SQLite3 и MySQL**: Бесшовная интеграция с базами данных SQLite и MySQL.
+- **Отключение логов**: Возможность отключить вывод логотипа и подсказок JOOQ в логах.
+- **Встроенные драйверы**: Включает драйверы SQLite и MySQL в JAR-файл.
+- **Кроссплатформенная поддержка**: Совместимость с различными программными серверами Minecraft.
 
-## 🛠 Code Examples
+## 🛠 Примеры кода
 
-### Disable JOOQ Logs
-You can disable the printing of the JOOQ logo and tips:
+### Отключение логов JOOQ
+Вы можете отключить вывод логотипа и подсказок JOOQ:
 ```java
 JOOQConnector.setJOOQMessagesEnabled(false);
 ```
 
-### SQLite3 Example
+### Пример работы с SQLite3
 ```java
 Table<?> table = DSL.table("test");
 SQLiteDatabase database = new SQLiteDatabase(new File("database.db"));
 
-// Creating table
+// Создание таблицы
 database.getConnection().thenAcceptAsync(connection -> {
     DSL.using(connection)
             .createTableIfNotExists(table)
@@ -37,7 +37,7 @@ database.getConnection().thenAcceptAsync(connection -> {
             .execute();
 }).join();
 
-// Inserting value into the table
+// Вставка значения
 database.getConnection().thenAcceptAsync(connection -> {
     DSL.using(connection).insertInto(table)
             .set(DSL.field("id"), 1)
@@ -45,7 +45,7 @@ database.getConnection().thenAcceptAsync(connection -> {
             .execute();
 }).join();
 
-// Getting value from the table
+// Получение значения
 String value = database.getConnection().thenApplyAsync(connection -> {
     Result<Record> result = DSL.using(connection).select()
             .from(table)
@@ -57,21 +57,21 @@ String value = database.getConnection().thenApplyAsync(connection -> {
 System.out.println("Value from table: " + value);
 ```
 
-### MySQL Example
+### Пример работы с MySQL
 ```java
 MySQLDatabase database = new MySQLDatabase("127.0.0.1:3306", "database", "user", "password");
 
-// The rest of the code is identical to the SQLite example...
+// Остальной код идентичен примеру с SQLite...
 ```
 
-### Switching Between SQLite and MySQL
+### Переключение между SQLite и MySQL
 ```java
 IDatabase database = sqlite ? 
     new SQLiteDatabase(new File("database.db")) : 
     new MySQLDatabase("127.0.0.1:3306", "database", "user", "password");
 ```
 
-### Organizing Database Operations in a Class
+### Организация операций с базой данных в классе
 ```java
 public class Database {
 
@@ -114,13 +114,13 @@ public class Database {
 }
 ```
 
-## 🔌 Installation
+## 🔌 Установка
 
-### Plugin Setup
-If you're not using the standalone API version, place the plugin JAR in your server's `plugins` folder.
+### Установка плагина
+Если вы не используете версию API для самостоятельного использования, поместите JAR-файл плагина в папку `plugins` вашего сервера.
 
 ### Maven
-Add the following repository and dependency to your `pom.xml`:
+Добавьте следующий репозиторий и зависимость в ваш `pom.xml`:
 
 ```xml
 <repositories>
@@ -139,7 +139,7 @@ Add the following repository and dependency to your `pom.xml`:
 ```
 
 ### Gradle
-Add the following repository and dependency to your `build.gradle`:
+Добавьте следующий репозиторий и зависимость в ваш `build.gradle`:
 
 ```groovy
 repositories {
@@ -154,4 +154,4 @@ dependencies {
 
 ___
 
-[Switch to Russian](README_ru.md)
+[Переключиться на английский](README.md)
